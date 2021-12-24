@@ -1,9 +1,7 @@
 from time import sleep
 import pip._vendor.requests as requests
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
+import os
 
 browser = webdriver.Chrome()
 sleep(5)
@@ -43,6 +41,4 @@ browser.get("http://sratim.tv")
 browser.add_cookie(COOKIE_DICT)
 browser.get(f"{WATCH_URL}{movie_id}.mp4{URL_AUTH}")
 
-
-sleep(50)
-
+os.system("pause")
