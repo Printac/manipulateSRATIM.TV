@@ -1,0 +1,20 @@
+
+sratim tv 
+
+function in js to find the id of the movie by the search engine: -- term value need to be the moovie name then getting a list from the api with the id's + names by search
+
+source: function(query, callback) {
+			$.post('//api.'+domain+'/movie/search', {term: ''}, function(r){
+				callback(r.results);
+			}, 'json');
+			
+
+
+https://api.sratim.tv/movie/preWatch -- generate string(token) to validate 15-30 sec for example 61c4cff981f70
+*****
+https://api.sratim.tv/movie/watch/id/556/token/61c4cff981f70 -- returns true if u waited 15-30 sec , token and time {"success":true,"watch":{"480":"\/\/s1.sratim.tv\/movie\/SD\/480\/556.mp4?token=n_x_5rtLt8APj_48M1Kd4Q&time=1640299823&uid="}}
+*****
+https://s1.sratim.tv/movie/SD/480/556.mp4?token=n_x_5rtLt8APj_48M1Kd4Q&time=1640299823&uid= -- now u can watch the moovie :)
+
+
+https://s1.sratim.tv - is the moovie backend / db
