@@ -29,7 +29,8 @@ token_time_auth = session.get(f"http://api.sratim.tv/movie/watch/id/{movie_id}/t
 URL_AUTH = token_time_auth[token_time_auth.index('?'):-3]
 
 print(f"{WATCH_URL}{movie_id}.mp4{URL_AUTH}")
-session.get(f"{WATCH_URL}{movie_id}.mp4{URL_AUTH}")
+print(session.get(f"{WATCH_URL}{movie_id}.mp4{URL_AUTH}").status_code)
 
 
-#TO DO: FIX --- 401 Authorization Required
+#get request to the movie url gets an status code 200(OK) but when opening it in broswer gets error 401
+#TO DO: FIX --- 401 Authorization Required -- only when copying url to broswer 
